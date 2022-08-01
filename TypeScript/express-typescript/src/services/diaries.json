@@ -1,0 +1,21 @@
+[
+    {
+        "id":1,
+        "date":"2022-02-02",
+        "weather":"rainy",
+        "visibility":"poor",
+        "commet":"Mal clima para volar"
+    },{
+        "id":2,
+        "date":"2022-05-05",
+        "weather":"sunny",
+        "visibility":"good",
+        "commet":"Muy buen clima para volar"
+    },{
+        "id":3,
+        "date":"2022-07-25",
+        "weather":"rainy",
+        "visibility":"poor",
+        "commet":"No volar"
+    }
+]
