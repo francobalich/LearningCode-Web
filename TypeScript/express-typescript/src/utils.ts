@@ -2,7 +2,9 @@ import { NewDiaryEntry } from './types'
 import { Visibility, Weather } from './enums'
 
 const parseComment = (commentFromRequest: any): string => {
-  if (!isString(commentFromRequest !== 'string')) { throw new Error('Incorrect or missing comment') }
+  if (!isString(commentFromRequest)) {
+    throw new Error('Incorrect or missing comment')
+  }
 
   return commentFromRequest
 }
