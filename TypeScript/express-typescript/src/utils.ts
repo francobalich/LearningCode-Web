@@ -1,4 +1,5 @@
-import { NewDiaryEntry, Visibility, Weather } from './types'
+import { NewDiaryEntry } from './types'
+import { Visibility, Weather } from './enums'
 
 const parseComment = (commentFromRequest: any): string => {
   if (!isString(commentFromRequest !== 'string')) { throw new Error('Incorrect or missing comment') }
