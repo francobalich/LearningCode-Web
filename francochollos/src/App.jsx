@@ -1,5 +1,5 @@
 import './App.css'
-import { Route, Routes, Link, useParams } from 'react-router-dom'
+import { Route, Routes, Link, useParams, Outlet } from 'react-router-dom'
 
 const Home = () => <h1>Home</h1>
 
@@ -29,6 +29,17 @@ const Tacos = () => {
     <div>
       <h1>Tacos</h1>
       {taco}
+      <Link to='details'>Ir a los detalles</Link>
+      <Outlet />
+    </div>
+  )
+}
+const TacoDetails = () => {
+  const { taco } = useParams()
+  return (
+    <div>
+      <h1>Taco Details </h1>
+      {taco}
     </div>
   )
 }
@@ -48,8 +59,10 @@ function App () {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/search-page' element={<SearchPage />} />
-        <Route path='/tacos/:taco' element={<Tacos />} />
-
+        <Route path='/tacos/:taco' element={<Tacos />}>
+          <Route path='details' element={<TacoDetails />} />
+        </Route>
+        <Route path='*' element={<h1>Not Found</h1>} />
       </Routes>
     </div>
   )
