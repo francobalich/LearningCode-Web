@@ -1,5 +1,6 @@
 import './App.css'
-import { Route, Routes, Link, useParams, Outlet } from 'react-router-dom'
+import './index.css'
+import { Route, Routes, Link, useParams, Outlet, NavLink } from 'react-router-dom'
 
 const Home = () => <h1>Home</h1>
 
@@ -47,11 +48,19 @@ function App () {
   return (
     <div className='App'>
       <header>
-        <h1>francochollo⚡</h1>
+        <h1>Practica React Router⚡</h1>
         <nav>
           <ul>
+            <li>
+              <NavLink
+                className={({ isActive }) => {
+                  return isActive ? 'is-active' : undefined
+                }}
+                to='/'
+              >Home
+              </NavLink>
+            </li>
             <li><Link to='/search-page'>Search Page</Link></li>
-            <li><Link to='/'>Home</Link></li>
           </ul>
         </nav>
       </header>
