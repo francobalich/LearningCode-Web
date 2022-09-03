@@ -1,0 +1,91 @@
+.imgRestaurante{
+    width: 60%;
+    border-radius: 50px;
+}
+.Inicio, .Busqueda, .titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.listaDeComidas{
+    width: 70%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.listaDeComidas li{
+    border: 1px solid red;
+    border-radius: 15px;
+    font-size: 35px;
+    font-weight: bold;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  color: white;
+    padding: 15px 20px;
+    background-color: #223;
+    transition: transform ease .3s;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.listaDeComidas li:hover{
+    transform: scale(1.1);
+}
+.listaDeComidas p{
+    font-size: 100px;
+    margin: 0;
+}
+.listaDeComidas a{
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+h1{
+  color: white;
+  font-size: 35px;
+}
+.titulo p{
+    border: 1px solid red;
+    border-radius: 15px;
+    font-size: 35px;
+    font-weight: bold;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  color: white;
+    padding: 15px 20px;
+    background-color: #223;
+    transition: transform ease .3s;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.irdetalles{
+    font-size: 25px;
+    text-decoration: none;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  color: white;
+}
+.irdetalles:hover{
+    font-weight: bold;
+}

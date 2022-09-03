@@ -1,46 +1,61 @@
 import './App.css'
 import './index.css'
 import { Route, Routes, Link, useParams, Outlet, NavLink } from 'react-router-dom'
+import restauranteImg from './assets/restaurante.jpg'
 
-const Home = () => <h1>Home</h1>
+const Home = () => {
+  return (
+    <div className='Inicio'>
+      <h1>Inicio</h1>
+      <img src={restauranteImg} alt='foto restaurante' className='imgRestaurante' />
+    </div>
+  )
+}
 
 const SearchPage = () => {
-  const tacos = [
-    'cochinita',
-    'chili',
-    'carnita',
-    'quesadilla'
+  const comidas = [
+    '🍔Hamburguesa',
+    '🍕Pizza',
+    '🌭Pancho',
+    '🍝Pastas',
+    '🥟Empanadas',
+    '🍻Cerveza',
+    '🥗Ensalada',
+    '🍣Sushi',
+    '🍨Helado',
+    '🌮Taco'
   ]
   return (
-    <div>
-      <h1>Search Page</h1>
-      <ul>
-        {tacos.map(taco => (
-          <li key={taco}>
-            <Link to={`/tacos/${taco}`}>{taco}</Link>
+    <div className='Busqueda'>
+      <h1>Menu</h1>
+      <ul className='listaDeComidas'>
+        {comidas.map(comida => (
+          <li key={comida}>
+            <Link to={`/comidas/${comida}`}><p>{comida.substring(0, 2)}</p>{comida.substring(2, comida.length)}</Link>
           </li>
         ))}
       </ul>
     </div>
   )
 }
-const Tacos = () => {
-  const { taco } = useParams()
+
+const Comidas = () => {
+  const { comida } = useParams()
   return (
-    <div>
-      <h1>Tacos</h1>
-      {taco}
-      <Link to='details'>Ir a los detalles</Link>
+    <div className='titulo'>
+      <h1>Comidas</h1>
+      <p>{comida}</p>
+      <Link className='irdetalles' to='details'>Ir a los detalles</Link>
       <Outlet />
     </div>
   )
 }
-const TacoDetails = () => {
-  const { taco } = useParams()
+const ComidaDetails = () => {
+  const { comida } = useParams()
   return (
-    <div>
-      <h1>Taco Details </h1>
-      {taco}
+    <div className='titulo'>
+      <h1>Detalles de la comida</h1>
+      <p className=''>{comida}</p>
     </div>
   )
 }
@@ -48,7 +63,7 @@ function App () {
   return (
     <div className='App'>
       <header>
-        <h1>Practica React Router⚡</h1>
+        <h1>Menu Restaurante🥟</h1>
         <nav>
           <ul>
             <li>
@@ -60,7 +75,7 @@ function App () {
               >Home
               </NavLink>
             </li>
-            <li><Link to='/search-page'>Search Page</Link></li>
+            <li><Link to='/search-page'>Página de busqueda</Link></li>
           </ul>
         </nav>
       </header>
@@ -68,8 +83,8 @@ function App () {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/search-page' element={<SearchPage />} />
-        <Route path='/tacos/:taco' element={<Tacos />}>
-          <Route path='details' element={<TacoDetails />} />
+        <Route path='/comidas/:comida' element={<Comidas />}>
+          <Route path='details' element={<ComidaDetails />} />
         </Route>
         <Route path='*' element={<h1>Not Found</h1>} />
       </Routes>
