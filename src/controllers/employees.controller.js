@@ -20,7 +20,6 @@ export const getEmployee = async(req,res)=> {
             message:'Something goes wrong'
         })
     }
-    
 }
 export const createEmployee = async (req,res)=> {
     try {
@@ -36,7 +35,6 @@ export const createEmployee = async (req,res)=> {
             message:'Something goes wrong'
         })
     }
-    
 }
 
 export const updateEmployee =async(req,res)=> {
@@ -52,7 +50,6 @@ export const updateEmployee =async(req,res)=> {
             message:'Something goes wrong'
         })
     }
-    
 }
 
 export const deleteEmployee =async(req,res)=> {
@@ -65,5 +62,4 @@ export const deleteEmployee =async(req,res)=> {
             message:'Something goes wrong'
         })
     }
-    
 }
