@@ -4,10 +4,22 @@ import './App.css'
 import {Admin, Analytics, Dashboard, Home, Landing}  from './pages/index'
 
 function App() {
-
+  const [user,setUser] = useState(null)
+  const login = ()=>{
+    setUser({
+      id:1,
+      name:"Franco"
+    })
+  }
+  const logout = ()=> setUser(null)
   return (
     <BrowserRouter>
     <Navegation />
+
+    {user ?
+    (<button onClick={logout}>Logout</button>):
+    (<button onClick={login}>Login</button>)
+    }
       <Routes>
         <Route index element={<Landing />}/>
         <Route path="/landing" element={<Landing />}/>
